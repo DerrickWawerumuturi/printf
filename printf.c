@@ -9,27 +9,28 @@
 int _printf(const char *format, ...)
 {
 
-	if (format == NULL)
-	{
-		return (-1);
-	}
-
 	int num_of_char;
 
 	num_of_char = 0;
 	va_list args;
+
+	if (format == NULL)
+		return (-1);
+
 	va_start(args, format);
 
 	while (*format)
 	{
 		if (*format != '%')
-		{
 			write(1, format, 1);
 			num_of_char++;
-		}
 		else
 		{
 			format++;
+			if (*format == '\0')
+			{
+				break;
+			}
 			if (*format == '%')
 			{
 				write(1, format, 1);
@@ -50,9 +51,7 @@ int _printf(const char *format, ...)
 				int len_of_str = 0;
 
 				while (arry[len_of_str] != '\0')
-				{
 					len_of_str++;
-				}
 				write(1, arry, len_of_str);
 				num_of_char += len_of_str;
 			}
