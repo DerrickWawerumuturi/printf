@@ -8,12 +8,13 @@
 
 int _printf(const char *format, ...)
 {
-	int num_of_char;
 
 	if (format == NULL)
 	{
 		return (-1);
 	}
+
+	int num_of_char;
 
 	num_of_char = 0;
 	va_list args;
