@@ -9,10 +9,10 @@
 int _printf(const char * const format, ...)
 {
 	convert p[] = {
-		{"%s", print_s}, 
+		{"%s", print_s},
 		{"%c", print_c},
 		{"%%", print_37},
-		{"%i", print_i}, 
+		{"%i", print_i},
 		{"%d", print_d} };
 
 	va_list args;
