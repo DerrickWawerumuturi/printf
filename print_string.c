@@ -19,11 +19,5 @@ int print_s(va_list val)
 			_putchar(str[j]);
 		return (length);
 	}
-	else
-	{
-		length = _strlen(str);
-		for (j = 0 ; j < length ; j++)
-			_putchar(str[j]);
-		return (length);
-	}
+	return (0);
 }

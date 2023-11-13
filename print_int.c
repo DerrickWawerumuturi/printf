@@ -34,16 +34,15 @@ int print_i(va_list args)
 			number = number / 10;
 		}
 		number = z;
-		while (expn > 0)
+		while (expn >= 1)
 		{
 			digit = number / expn;
-			_putchar(digit + '0');
 			_putchar(digit + '0');
 			expn = expn / 10;
 			j++;
 		}
 	}
-	_putchar(last + 'o');
+	_putchar(last + '0');
 	return (j);
 }
 
@@ -75,16 +74,16 @@ int print_d(va_list args)
 	{
 		while (number / 10 != 0)
 		{
-			expn = expn * 10;
-			number = number / 10;
+			expn *= 10;
+			number /= 10;
 		}
 		number = z;
-		while (expn > 0)
+		while (expn >= 1)
 		{
-			digit = number / expn;
+			digit = z / expn;
 			_putchar(digit + '0');
-			number = number - (digit * expn);
-			expn = expn / 10;
+			z %= expn;
+			expn /= 10;
 			j++;
 		}
 	}
