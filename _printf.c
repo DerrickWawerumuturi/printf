@@ -9,9 +9,11 @@
 int _printf(const char * const format, ...)
 {
 	convert p[] = {
-		{"%s", print_s}, {"%c", print_c},
+		{"%s", print_s}, 
+		{"%c", print_c},
 		{"%%", print_37},
-		{"%i", print_i}, {"%d", print_d} };
+		{"%i", print_i}, 
+		{"%d", print_d} };
 
 	va_list args;
 	int in = 0, j, Tlen = 0;

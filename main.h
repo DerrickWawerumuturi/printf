@@ -25,10 +25,11 @@ int print_str(va_list arg);
 int print_c(va_list val);
 int print_37(void);
 int _strlenc(const char *str);
-int strlen(char *str);
+int _strlen(char *str);
 int print_bin(va_list val);
 int print_i(va_list args);
 int print_d(va_list args);
+int print_s(va_list val);
 
 
 

@@ -8,7 +8,7 @@
 int print_i(va_list args)
 {
 	/*declare Varianle;*/
-	int z = va_args(args, int);
+	int z = va_arg(args, int);
 	int number, last = z % 10, digit, expn = 1;
 	int j = 1;
 
@@ -33,7 +33,7 @@ int print_i(va_list args)
 			expn = expn * 10;
 			number = number / 10;
 		}
-		num = z;
+		number = z;
 		while (expn > 0)
 		{
 			digit = number / expn;
@@ -55,7 +55,7 @@ int print_i(va_list args)
 
 int print_d(va_list args)
 {
-	int z = va _(args, int);
+	int z = va_arg(args, int);
 	int number, last = z % 10, digit;
 	int j = 1;
 	int expn = 1;

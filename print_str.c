@@ -4,7 +4,7 @@
  * @str: string
  * Return: intager
  */
-int_strlen(char *str)
+int _strlen(char *str)
 {
 	int ch;
 	/*loop throug each character of the string*/
@@ -21,7 +21,7 @@ int _strlenc(const char *str)
 {
 	int ch;
 
-	for (ch = 0; s[ch] != 0; ch++)
+	for (ch = 0; str[ch] != 0; ch++)
 		;
 	return (ch);
 }

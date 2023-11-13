@@ -15,13 +15,13 @@ int print_s(va_list val)
 	{
 		str = "(null)";
 		length = _strlen(str);
-		for (j = 0 ; i < length ; j++)
+		for (j = 0 ; j < length ; j++)
 			_putchar(str[j]);
 		return (length);
 	}
 	else
 	{
-		length = strlen(str);
+		length = _strlen(str);
 		for (j = 0 ; j < length ; j++)
 			_putchar(str[j]);
 		return (length);
