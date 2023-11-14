@@ -59,7 +59,6 @@ int print_d(va_list args)
 		_putchar('-');
 		number = -number;
 		niz = -niz;
-		las = -las;
 		j++;
 	}
 	if (number > 0)
