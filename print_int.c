@@ -1,85 +1,58 @@
 #include "main.h"
 
 /**
- * print_i - prints integer
- * @args: arguments to print
- * Return: integer
- */
-
-int print_i(va_list args)
-{
-	int nom = va_arg(args, int);
-	int ne_gative = 0;
-	int digit, expn = 1;
-	int jm = 0;
-
-	int temp = nom;
-
-	if (nom < 0)
-	{
-		_putchar('-');
-		ne_gative = 1;
-		nom = -nom;
-		jm++;
-	}
-	while (temp / 10 != 0)
-	{
-		expn *= 10;
-		temp /= 10;
-	}
-	while (expn >= 1)
-	{
-		digit = nom / expn;
-		_putchar(digit + '0');
-		nom %= expn;
-		expn /= 10;
-		jm++;
-	}
-	return (ne_gative ? jm + 1 : jm);
-}
-
-/**
  * print_d - print decimal
- * @args: arguments to be printed
- * Return: integer
+ * @args :decimal argument
+ * Return:number
  */
 
 int print_d(va_list args)
 {
-	int niz = va_arg(args, int);
-	int number, las = niz % 10, digit;
-	int j = 1;
-	int expn = 1;
-
-	niz = niz / 10;
-	number = niz;
-
-	if (las < 0)
+	int noz = va_arg(args, int);
+	int ini;
+	int keep_count = 1;
+	int number = 0;
+	
+	if (noz == INT_MIN)
 	{
 		_putchar('-');
-		number = -number;
-		niz = -niz;
-		las = -las;
-		j++;
+		_putchar('2');
+		_putchar('1');
+		_putchar('4');
+		_putchar('7');
+		_putchar('4');
+		_putchar('8');
+		_putchar('3');
+		_putchar('6');
+		_putchar('4');
+		_putchar('8');
+		return (11);
 	}
-	if (number > 0)
+	if (noz < 0)
 	{
-		while (number / 10 != 0)
-		{
-			expn = expn * 10;
-			number = number / 10;
-		}
-		number = niz;
-		while (expn > 0)
-		{
-			digit = number / expn;
-			_putchar(digit + '0');
-			number = number - (digit * expn);
-			expn = expn / 10;
-			j++;
-		}
+		noz = (noz * -1);
+		number += _putchar('-');
 	}
-	_putchar(las + '0');
+	ini = noz;
+	while (ini > 9)
+	{
+		ini /= 10;
+		keep_count *= 10;
+	}
+	while (keep_count >= 1)
+	{
+		number += _putchar(((noz / keep_count) % 10) + '0');
+		keep_count /= 10;
+	}
+	return (number);
+}
 
-	return (j);
+/**
+ * print_i -prints integer
+ * @args:integer argument
+ * Return: function
+ */
+int print_i(va_list args)
+{
+	return (print_d(args));
 }
