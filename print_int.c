@@ -12,7 +12,7 @@ int print_d(va_list args)
 	int ini;
 	int keep_count = 1;
 	int number = 0;
-	
+
 	if (noz == INT_MIN)
 	{
 		_putchar('-');
@@ -59,9 +59,9 @@ int print_i(va_list args)
 
 
 /**
- * print_b - pritns binARY REP
+ *  print_b- prints binARY REP
  * @args: unsigned int args
- * Retunr: number of characters printed
+ * Return: number of characters printed
  */
 
 int print_b(va_list args)
@@ -69,7 +69,7 @@ int print_b(va_list args)
 	unsigned int num = va_arg(args, unsigned int);
 	unsigned int keep_count = 1;
 	int numb = 0;
-	
+
 	if (num == 0)
 	{
 		return (_putchar('0'));
