@@ -9,7 +9,7 @@
 int print_i(va_list args)
 {
 	int nom = va_arg(args, int);
-	int ne_gative= 0;
+	int ne_gative = 0;
 	int digit, expn = 1;
 	int jm = 0;
 
