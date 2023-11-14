@@ -57,35 +57,32 @@ int print_i(va_list args)
 	return (print_d(args));
 }
 
+
 /**
- * print_b - prints binary representation
- * @args: unsigned int argument
- * Return: number of characters printed
+ * print_b - pritns binARY REP
+ * @args: unsigned int args
+ * Retunr: number of characters printed
  */
+
 int print_b(va_list args)
 {
-    unsigned int n = va_arg(args, unsigned int);
-    int count = 1;
-    int number = 0;
-
-    if (n == 0)
-    {
-        return _putchar('0');
-    }
-
-    while (n >= (unsigned int)(count * 2))
-    {
-        count *= 2;
-    }
-
-
-    while (count > 0)
-    {
-        number += _putchar(((n / count)) + '0');
-	n %= count;
-        count /= 2;
-    }
-
-    return (number);
+	unsigned int num = va_arg(args, unsigned int);
+	unsigned int keep_count = 1;
+	int numb = 0;
+	
+	if (num == 0)
+	{
+		return (_putchar('0'));
+	}
+	while (num >= keep_count * 2)
+	{
+		keep_count *= 2;
+	}
+	while (keep_count > 0)
+	{
+		numb += _putchar((num / keep_count) + '0');
+		num %= keep_count;
+		keep_count /= 2;
+	}
+	return (numb);
 }
-
